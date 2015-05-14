@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title th:text="${title}">Title</title>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}"
+          href="../../css/bootstrap.min.css"/>
+</head>
+<body>
+<div class="container">
+    <div class="navbar">
+        <div class="navbar-inner">
+            <ul class="nav">
+                <li><a th:href="@{/}" href="home.html"> Home </a></li>
+                <li><a th:href="@{/logout}" href="logout"> Logout </a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="modules_status" class="row-fluid">
+        <table class="table">
+            <tr>
+                <th>Modules</th>
+                <th>Is Enabled ?</th>
+            </tr>
+            <tr>
+                <td>SMS Module Job Status</td>
+                <td><input type="checkbox" id="sms_module_enabled_checkbox"/></td>
+            </tr>
+            <tr>
+                <td>Mail Module Job Status</td>
+                <td><input type="checkbox" id="mail_module_enabled_checkbox"/></td>
+            </tr>
+        </table>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Login</title>
+<link rel="stylesheet" th:href="@{/css/bootstrap.min.css}"
+	href="../../css/bootstrap.min.css" />
+</head>
+<body onload="document.f.username.focus();">
+	<div class="container">
+		<div class="navbar">
+			<div class="navbar-inner">
+				<!-- <a class="brand" href="http://www.thymeleaf.org"> Thymeleaf -
+					Plain </a> -->
+				<ul class="nav">
+					<li><a th:href="@{/}" href="home.html"> Home </a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="content">
+			<form name="f" th:action="@{/login}" method="post">
+				<fieldset>
+					<legend>Please Login</legend>
+					<div th:if="${param.error}" class="alert alert-error">
+						Invalid username and password.</div>
+					<div th:if="${param.logout}" class="alert alert-success">You
+						have been logged out.</div>
+					<label for="username">Username</label> <input type="text"
+						id="username" name="username" placeholder="Enter Username" /> <label
+						for="password">Password</label> <input type="password"
+						id="password" name="password" placeholder="Enter Password" /> <label
+						for="remember-me">Remember Me? <input type="checkbox"
+						id="remember-me" name="remember-me" /></label>
+					<div class="form-actions">
+						<button type="submit" class="btn btn-primary" id="login">Log
+							in</button>
+					</div>
+				</fieldset>
+			</form>
+		</div>
+	</div>
+</body>
+</html>
